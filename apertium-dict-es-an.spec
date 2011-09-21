@@ -2,12 +2,12 @@ Summary:	Spanish-Aragonese language pair for Apertium
 Summary(pl.UTF-8):	Para języków hiszpański-aragoński dla Apertium
 %define	lpair	es-an
 Name:		apertium-dict-%{lpair}
-Version:	0.1.0
+Version:	0.2.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Text
 Source0:	http://downloads.sourceforge.net/apertium/apertium-%{lpair}-%{version}.tar.gz
-# Source0-md5:	18837050a5e603bb1af2d7d39c053bf3
+# Source0-md5:	3e7c9e5c1425e43a2c896f4daa7ff4fb
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.apertium.org/
 BuildRequires:	apertium-devel >= 3.2.0
@@ -49,9 +49,6 @@ install -d $RPM_BUILD_ROOT%{_datadir}/apertium/modes
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# not needed here (see modes subdir) and contain wrong (builddir) paths
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/apertium/apertium-%{lpair}/*.mode
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -60,3 +57,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %{_datadir}/apertium/apertium-%{lpair}
 %{_datadir}/apertium/modes/an-es.mode
+%{_datadir}/apertium/modes/es-an.mode
