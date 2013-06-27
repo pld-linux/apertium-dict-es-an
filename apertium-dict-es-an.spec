@@ -2,13 +2,12 @@ Summary:	Spanish-Aragonese language pair for Apertium
 Summary(pl.UTF-8):	Para języków hiszpański-aragoński dla Apertium
 %define	lpair	es-an
 Name:		apertium-dict-%{lpair}
-Version:	0.2.0
+Version:	0.3
 Release:	1
 License:	GPL v2+
 Group:		Applications/Text
 Source0:	http://downloads.sourceforge.net/apertium/apertium-%{lpair}-%{version}.tar.gz
-# Source0-md5:	3e7c9e5c1425e43a2c896f4daa7ff4fb
-Patch0:		%{name}-DESTDIR.patch
+# Source0-md5:	d4fc07f5908fa63e83f710898f19dab9
 URL:		http://www.apertium.org/
 BuildRequires:	apertium-devel >= 3.2.0
 BuildRequires:	autoconf >= 2.52
@@ -31,7 +30,6 @@ oznaczania części mowy w obu językach.
 
 %prep
 %setup -q -n apertium-%{lpair}-%{version}
-%patch0 -p1
 
 %build
 %{__aclocal}
